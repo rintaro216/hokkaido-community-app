@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北海道旅人アプリ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f0f8ff;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .emoji { font-size: 3em; margin: 20px 0; }
+        .url {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .button {
+            background: #2196f3;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button:hover { background: #1976d2; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="emoji">🗾</div>
+        <h1>北海道旅人アプリ</h1>
+        <p>アプリが起動しています。下のボタンをクリックしてください。</p>
+
+        <div class="url">http://localhost:8083</div>
+
+        <a href="http://localhost:8083" target="_blank" class="button">
+            📱 アプリを開く
+        </a>
+
+        <br><br>
+
+        <p><strong>うまく開かない場合：</strong></p>
+        <ol style="text-align: left; display: inline-block;">
+            <li>上記URLをコピーしてブラウザのアドレスバーに貼り付け</li>
+            <li>「restart-app.bat」を実行してサーバーを再起動</li>
+            <li>ポート8083が使用中の場合は8084や8085を試す</li>
+        </ol>
+    </div>
+
+    <script>
+        // 3秒後に自動でアプリを開く
+        setTimeout(function() {
+            window.open('http://localhost:8083', '_blank');
+        }, 3000);
+    </script>
+</body>
+</html>
