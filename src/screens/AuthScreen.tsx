@@ -17,7 +17,7 @@ import { AuthService } from '../services/auth';
 type AuthMode = 'login' | 'signup';
 
 export default function AuthScreen({ navigation }: any) {
-  const [authMode, setAuthMode] = useState<AuthMode>('login');
+  const [authMode, setAuthMode] = useState<AuthMode>('signup');
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -270,14 +270,6 @@ export default function AuthScreen({ navigation }: any) {
           <Text style={styles.footerText}>
             登録することで、利用規約とプライバシーポリシーに同意したものとみなされます。
           </Text>
-          
-          {authMode === 'login' && (
-            <View style={styles.demoInfo}>
-              <Text style={styles.demoTitle}>🎯 デモアカウント</Text>
-              <Text style={styles.demoText}>メール: demo@hokkaido.com</Text>
-              <Text style={styles.demoText}>パスワード: demo123</Text>
-            </View>
-          )}
         </View>
       </ScrollView>
     </KeyboardAvoidingView>
@@ -391,22 +383,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     lineHeight: 18,
     marginBottom: SPACING.md,
-  },
-  demoInfo: {
-    backgroundColor: COLORS.primaryLight,
-    borderRadius: BORDER_RADIUS.md,
-    padding: SPACING.md,
-    alignItems: 'center',
-  },
-  demoTitle: {
-    fontSize: FONT_SIZES.sm,
-    fontWeight: 'bold',
-    color: COLORS.textInverse,
-    marginBottom: SPACING.xs,
-  },
-  demoText: {
-    fontSize: FONT_SIZES.xs,
-    color: COLORS.textInverse,
-    fontFamily: Platform.OS === 'ios' ? 'Courier' : 'monospace',
   },
 });
